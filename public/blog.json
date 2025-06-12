@@ -1,0 +1,134 @@
+[
+  {
+    "id": "b001",
+    "title": "7 Tips to Build a High-Performance App with Next.js",
+    "slug": "7-tips-for-high-performance-nextjs-app",
+    "author": { "name": "Rakib Hasan", "id": "u001" },
+    "thumbnail": "https://i.ibb.co/TLt7gM7/Everest-Region-Nepal.jpg",
+    "content": "In this blog, you'll learn how to optimize your Next.js app for better performance...",
+    "tags": ["Next.js", "Performance", "React"],
+    "category": "Web Development",
+    "publishedAt": "2025-06-01T10:00:00Z",
+    "updatedAt": "2025-06-02T12:00:00Z",
+    "readingTime": "6 min",
+    "isFeatured": true,
+    "likes": 54,
+    "views": 1020,
+    "comments": [],
+    "seo": {
+      "metaTitle": "Next.js Performance Tips",
+      "metaDescription": "7 proven ways to make your Next.js app blazing fast.",
+      "keywords": ["Next.js", "Performance", "Tips"]
+    }
+  },
+  {
+    "id": "b002",
+    "title": "MongoDB Complete Guide: From Basics to Advanced",
+    "slug": "mongodb-complete-guide",
+    "author": { "name": "Salma Khatun", "id": "u002" },
+    "thumbnail": "https://i.ibb.co/TLt7gM7/Everest-Region-Nepal.jpg",
+    "content": "MongoDB is quite interesting to learn. In this blog, we’ll start from the basics...",
+    "tags": ["MongoDB", "Database", "Backend"],
+    "category": "Backend Development",
+    "publishedAt": "2025-05-28T09:30:00Z",
+    "updatedAt": "2025-05-29T11:00:00Z",
+    "readingTime": "7 min",
+    "isFeatured": false,
+    "likes": 34,
+    "views": 890,
+    "comments": [],
+    "seo": {
+      "metaTitle": "MongoDB Full Guide in English",
+      "metaDescription": "Learn MongoDB from scratch to advanced level in this detailed blog.",
+      "keywords": ["MongoDB", "Database Tutorial", "Backend"]
+    }
+  },
+  {
+    "id": "b003",
+    "title": "How to Add Dark Mode in a React App",
+    "slug": "how-to-add-dark-mode-in-react",
+    "author": { "name": "Naeem Ahmed", "id": "u003" },
+    "thumbnail": "https://i.ibb.co/TLt7gM7/Everest-Region-Nepal.jpg",
+    "content": "In this article, we’ll implement a simple dark mode toggle in a React app...",
+    "tags": ["React", "UI", "Dark Mode"],
+    "category": "Frontend",
+    "publishedAt": "2025-06-05T15:00:00Z",
+    "updatedAt": "2025-06-06T08:00:00Z",
+    "readingTime": "4 min",
+    "isFeatured": false,
+    "likes": 21,
+    "views": 560,
+    "comments": [],
+    "seo": {
+      "metaTitle": "Add Dark Mode to React App",
+      "metaDescription": "Step-by-step guide to implement dark mode in your React projects.",
+      "keywords": ["React Dark Mode", "UI Theme", "React Tips"]
+    }
+  },
+  {
+    "id": "b004",
+    "title": "Web Accessibility: Why and How?",
+    "slug": "web-accessibility-guide",
+    "author": { "name": "Mahfuz Alam", "id": "u004" },
+    "thumbnail": "https://i.ibb.co/TLt7gM7/Everest-Region-Nepal.jpg",
+    "content": "A website should be usable by everyone. In this blog, we’ll learn about accessibility...",
+    "tags": ["Accessibility", "HTML", "A11y"],
+    "category": "Web Design",
+    "publishedAt": "2025-06-07T12:00:00Z",
+    "updatedAt": "2025-06-08T10:00:00Z",
+    "readingTime": "5 min",
+    "isFeatured": true,
+    "likes": 18,
+    "views": 440,
+    "comments": [],
+    "seo": {
+      "metaTitle": "Understanding Web Accessibility",
+      "metaDescription": "Why web accessibility matters and how to implement it in your site.",
+      "keywords": ["Accessibility", "Web Design", "Inclusive Design"]
+    }
+  },
+  {
+    "id": "b005",
+    "title": "JavaScript Event Loop Explained Simply",
+    "slug": "javascript-event-loop-explained",
+    "author": { "name": "Tahmid Hasan", "id": "u005" },
+    "thumbnail": "https://i.ibb.co/TLt7gM7/Everest-Region-Nepal.jpg",
+    "content": "JavaScript’s event loop can be tricky, but we’ll simplify it in this article...",
+    "tags": ["JavaScript", "Async", "Event Loop"],
+    "category": "JavaScript",
+    "publishedAt": "2025-06-03T14:00:00Z",
+    "updatedAt": "2025-06-03T18:00:00Z",
+    "readingTime": "6 min",
+    "isFeatured": false,
+    "likes": 45,
+    "views": 720,
+    "comments": [],
+    "seo": {
+      "metaTitle": "JavaScript Event Loop Explained",
+      "metaDescription": "Learn how JavaScript’s Event Loop works in a beginner-friendly way.",
+      "keywords": ["JavaScript", "Event Loop", "Async JS"]
+    }
+  },
+  {
+    "id": "b006",
+    "title": "Learn Git and GitHub: Basic Commands You Must Know",
+    "slug": "learn-git-and-github-basics",
+    "author": { "name": "Jannatul Naeem", "id": "u006" },
+    "thumbnail": "https://i.ibb.co/TLt7gM7/Everest-Region-Nepal.jpg",
+    "content": "In this blog, you’ll learn the most essential Git and GitHub commands...",
+    "tags": ["Git", "GitHub", "Version Control"],
+    "category": "Tools",
+    "publishedAt": "2025-05-30T08:00:00Z",
+    "updatedAt": "2025-06-01T10:00:00Z",
+    "readingTime": "5 min",
+    "isFeatured": true,
+    "likes": 60,
+    "views": 1100,
+    "comments": [],
+    "seo": {
+      "metaTitle": "Git and GitHub Basics",
+      "metaDescription": "Master the most used Git & GitHub commands for everyday development.",
+      "keywords": ["Git", "GitHub", "Version Control Basics"]
+    }
+  }
+]
