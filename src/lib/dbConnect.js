@@ -1,7 +1,7 @@
-const {MONGODB_USER, MONGODB_PASSWORD} = process.env
-const uri = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@cluster0.xdjfp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-import { MongoClient, Db, ServerApiVersion } from "mongodb";
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.xdjfp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 let cachedClient= null;
 
