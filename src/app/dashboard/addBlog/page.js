@@ -18,7 +18,7 @@ export default function BlogUpdateForm() {
     const content = form.content.value
     const tags = form.tags.value
     const tagsArray = tags.split(',')
-    
+
     const blogData = {
       title,
       slug,
@@ -32,7 +32,8 @@ export default function BlogUpdateForm() {
     console.log(blogData)
 
   };
-
+// simpleBlogSite
+// 2j28gPhSdz5eMSsG
   return (
     <div className="max-w-3xl mx-auto px-4 py-6">
       <h2 className="text-2xl font-semibold mb-6">Add Blog Post</h2>
