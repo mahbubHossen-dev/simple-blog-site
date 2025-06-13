@@ -1,22 +1,30 @@
 'use client'
+import { useGetBlogsQuery } from '@/features/blogs'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 export default function BlogsPage() {
 
-    const [blogs, setBlogs] = useState([])
+    const {data, isLoading } = useGetBlogsQuery('blogsData')
+    
+    // const [blogs, setBlogs] = useState([])
 
-    useEffect(() => {
-        fetch('/blog.json')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('/blog.json')
+    //         .then(res => res.json())
+    //         .then(data => setBlogs(data))
+    // }, [])
 
+    if(isLoading){
+        return <p>Loading</p>
+    }
+
+    console.log(data.result)
 
     return (
         <div className='w-full px-5 lg:px-8 xl:px-[8%] grid md:grid-cols-2 gap-6 mt-16'>
             {
-                blogs?.map((blog, index) => (
+                data?.result?.map((blog, index) => (
                     <div key={index}>
                         <div className='relative w-full h-60 mb-4 rounded-md overflow-hidden'>
                             <Image fill src={blog.thumbnail} alt="Image" />

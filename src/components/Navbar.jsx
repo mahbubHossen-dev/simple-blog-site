@@ -14,7 +14,7 @@ export default function Navbar() {
     return (
         <div>
             {
-                !isDashboard && <div className='flex justify-between items-center w-full px-5 lg:px-8 xl:px-8% md:px-8 bg-red-300 py-3'>
+                !isDashboard && <div className='flex justify-between items-center w-full px-5 lg:px-8 xl:px-[8%] md:px-8 bg-red-300 py-3'>
                     <div>
                         <h1>Blog</h1>
                     </div>
