@@ -1,3 +1,4 @@
+
 import { blogApi } from "./blogsAPIFetch"
 
 const reUseBlogsApi = blogApi.injectEndpoints({
@@ -5,8 +6,17 @@ const reUseBlogsApi = blogApi.injectEndpoints({
         getBlogs: build.query({
             query: () => '/blogs'
         }),
-
+        updateBlog: build.mutation({
+            query: ({ id, updatedData }) => ({
+                url: `/blogs/${id}`,
+                method: 'PUT',
+                body: updatedData,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+        })
     })
 })
 
-export const { useGetBlogsQuery } = reUseBlogsApi
+export const { useGetBlogsQuery, useUpdateBlogMutation } = reUseBlogsApi
