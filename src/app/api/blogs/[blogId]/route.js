@@ -2,19 +2,22 @@ import dbConnect from "@/lib/dbConnect";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
+const db = await dbConnect()
+const collection = await db.collection('blogs')
+
 export async function PUT(request, content) {
     const payload = await request.json()
     const id = content.params.blogId
     console.log(id)
     console.log(payload)
-    const db = await dbConnect()
+    
     const query = { _id: new ObjectId(id) }
-    const collection = await db.collection('blogs')
+    
     const updateDoc = {
         $set: {
             title: payload.title,
             slug: payload.slug,
-            authorName: payload.authorName,
+            'author.name': payload.authorName,
             thumbnail: payload.thumbnail,
             category: payload.category,
             readingTime: payload.readingTime,
@@ -27,4 +30,17 @@ export async function PUT(request, content) {
     console.log(result)
 
     return NextResponse.json(result)
+}
+
+export async function DELETE(request, content) {
+    const id = content.params.blogId;
+    const query = {_id: new ObjectId(id)}
+    
+    console.log(id)
+    if(id){
+        const result = await collection.deleteOne(query) 
+        return NextResponse.json({result: 'user delete', success: true, result}, {status: 200, id})
+    }else{
+        return NextResponse.json({result: 'internal Error, please try after some time', success: false}, {status: 400})
+    }
 }

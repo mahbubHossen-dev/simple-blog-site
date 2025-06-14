@@ -12,11 +12,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { useUpdateBlogMutation } from "@/features/blogs"
+import { useGetBlogsQuery, useUpdateBlogMutation } from "@/features/blogs"
 import { useEffect } from "react"
 
 export default function UpdateModal({ open, setOpen, selectedBlog }) {
     const [updateBlog, { isLoading }] = useUpdateBlogMutation()
+    const { refetch } = useGetBlogsQuery('blogsData')
     const { _id, title, slug, author, thumbnail, category, readingTime, content, tags } = selectedBlog || {}
 
 
@@ -44,28 +45,19 @@ export default function UpdateModal({ open, setOpen, selectedBlog }) {
             content,
             tags: tagsArray
         }
-        // try {
-        //     const response = await fetch(`http://localhost:3000/api/blogs/${_id}`, {
-        //         method: "PUT",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(updateBlogData),
-        //     });
 
-        //     const result = await response.json();
-        //     console.log(result);
-        // } catch (error) {
-        //     console.error("Error updating blog:", error);
-        // }
-
-        const result = await updateBlog({
-            id: selectedBlog._id,
-            updatedData: updateBlogData,
-        })
-        console.log(result)
-
-
+        try {
+            const result = await updateBlog({
+                id: selectedBlog._id,
+                updatedData: updateBlogData,
+            })
+            if(result.data.modifiedCount > 0){
+                refetch()
+            }
+        } catch (error) {
+            console.log(error)
+        }
+        // console.log(result)
     };
 
     if (isLoading) {
@@ -121,7 +113,7 @@ export default function UpdateModal({ open, setOpen, selectedBlog }) {
 
                         <div className="grid gap-3">
                             <Label htmlFor="username-1">tags</Label>
-                            <Input id="username-1" name="tags" required/>
+                            <Input id="username-1" name="tags" required />
                         </div>
                         <DialogFooter>
                             <DialogClose asChild>
