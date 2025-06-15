@@ -1,4 +1,5 @@
 'use client'
+import {  signOut } from '@/app/auth';
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -7,8 +8,14 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import { useSession } from 'next-auth/react'
+import { doLogout } from '@/app/actions';
+import Logout from './Logout';
 
 export default function Navbar() {
+
+    const { data: session } = useSession()
+    // console.log(data)
     const pathname = usePathname()
     const isDashboard = pathname.startsWith('/dashboard')
     return (
@@ -37,10 +44,16 @@ export default function Navbar() {
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
-                    <div>
-                        <Link href={'/signIn'}>SignIn</Link>
-                        <Link href={''}>SignUp</Link>
-                    </div>
+
+                    {
+                        session ? <>
+                            <Logout />
+                        </> : <div>
+                            <Link href={'/signIn'}>SignIn</Link>
+                            <Link href={''}>SignUp</Link>
+                        </div>
+                    }
+
                 </div>
             }
         </div>
