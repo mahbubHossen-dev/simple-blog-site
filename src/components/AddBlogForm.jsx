@@ -39,19 +39,6 @@ export default function AddBlogForm() {
         // const result = await fetch('loc') 
 
         try {
-            // const result = await fetch('http://localhost:3000/api/blogs', {
-            //     method: 'POST',
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(blogData)
-            // })
-            // console.log(result)
-            // if(result.ok){
-            //     alert('Blog Added Successfully')
-            //     refetch()
-            // }
-
             const result = await addBlog({ blogData })
             if (result.data.insertedId) {
                 refetch()
@@ -61,7 +48,6 @@ export default function AddBlogForm() {
         } catch (error) {
             console.log(error.message)
         }
-
     };
 
     return (

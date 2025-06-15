@@ -38,7 +38,7 @@ export default function Navbar() {
                         </NavigationMenuList>
                     </NavigationMenu>
                     <div>
-                        <Link href={''}>SignIn</Link>
+                        <Link href={'/signIn'}>SignIn</Link>
                         <Link href={''}>SignUp</Link>
                     </div>
                 </div>

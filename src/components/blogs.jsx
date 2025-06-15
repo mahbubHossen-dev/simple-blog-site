@@ -1,12 +1,13 @@
 'use client'
+import { auth } from '@/app/auth'
 import { useGetBlogsQuery } from '@/features/blogs'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 export default function BlogsPage() {
-
     const {data, isLoading } = useGetBlogsQuery('blogsData')
-    
+    // const session = await auth()
+    // console.log(session)
     // const [blogs, setBlogs] = useState([])
 
     // useEffect(() => {
