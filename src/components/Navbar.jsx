@@ -1,5 +1,5 @@
 'use client'
-import {  signOut } from '@/app/auth';
+
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -9,13 +9,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { useSession } from 'next-auth/react'
-import { doLogout } from '@/app/actions';
-import Logout from './Logout';
+import Logout from './LoginForm/Logout';
+
 
 export default function Navbar() {
 
-    const { data: session } = useSession()
-    // console.log(data)
+    const { data: session, status } = useSession();
+    // console.log(session)
+    // console.log(status)
     const pathname = usePathname()
     const isDashboard = pathname.startsWith('/dashboard')
     return (
@@ -25,7 +26,7 @@ export default function Navbar() {
                     <div>
                         <h1>Blog</h1>
                     </div>
-                    <NavigationMenu>
+                    {/* <NavigationMenu>
                         <NavigationMenuList className='flex gap-3'>
                             <NavigationMenuItem>
                                 <Link href="/blog">Blog</Link>
@@ -43,12 +44,12 @@ export default function Navbar() {
                                 <Link href="/dashboard">Dashboard</Link>
                             </NavigationMenuItem>
                         </NavigationMenuList>
-                    </NavigationMenu>
+                    </NavigationMenu> */}
 
                     {
-                        session ? <>
+                        session?.user ? <>
                             <Logout />
-                        </> : <div>
+                        </> : <div className='flex gap-2'>
                             <Link href={'/signIn'}>SignIn</Link>
                             <Link href={''}>SignUp</Link>
                         </div>
@@ -56,6 +57,7 @@ export default function Navbar() {
 
                 </div>
             }
+
         </div>
     );
 }

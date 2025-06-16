@@ -2,6 +2,11 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 export const blogApi = createApi({
     reducerPath: 'blogsApi',
-    baseQuery: fetchBaseQuery({baseUrl:'http://localhost:3000/api'}),
-    endpoints: (build) => ({})
+    baseQuery: fetchBaseQuery({baseUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}/api`}),
+    endpoints: (build) => ({}),
+    mode: "cors", 
+    prepareHeaders: (headers) => {
+      headers.set('Access-Control-Allow-Origin', '*')
+      return headers
+    },
 })
