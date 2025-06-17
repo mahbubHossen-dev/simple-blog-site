@@ -1,7 +1,9 @@
 
 'use server'
 
-import { signIn, signOut } from "../auth";
+import { signIn, signOut } from "../api/auth/[...nextauth]/route";
+
+
 
 
 export async function doSocialLogin(formData) {
@@ -22,6 +24,7 @@ export async function doCredentialLogin(formData){
     })
     return response
   }catch(error){
+    console.log(error)
     throw new Error(error)
   }
 }

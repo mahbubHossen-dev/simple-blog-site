@@ -2,6 +2,9 @@ import { userApi } from "./userApiFetch";
 
 const reUseUserApi = userApi.injectEndpoints({
     endpoints: (build) => ({
+        getUser: build.query({
+            query: () => '/register' 
+        }),
         addUser: build.mutation({
             query: (userData) => ({
                 url: '/register',
@@ -15,4 +18,4 @@ const reUseUserApi = userApi.injectEndpoints({
     })
 })
 
-export const { useAddUserMutation } = reUseUserApi
+export const { useGetUserQuery, useAddUserMutation } = reUseUserApi

@@ -1,5 +1,6 @@
 import BlogsPage from "@/components/blogs";
-import { auth } from "./auth";
+import { auth } from "./api/auth/[...nextauth]/route";
+
 
 
 export default async function Home() {

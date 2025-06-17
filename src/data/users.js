@@ -1,19 +1,11 @@
-const users = [
-  {
-    email: "mhb@gmail.com",
-    password: "1234"
-  },
-  {
-    email: "alex@email.com",
-    password: "password"
-  },
-  {
-    email: "bob@email.com",
-    password: "password"
-  }
-]
 
-export const getUserByEmail = (email) => {
-  const found = users.find(user => user.email === email);
+import { useGetUserQuery } from "@/features/user";
+
+
+
+export const getUserByEmail =async (email) => {
+  const { data } = useGetUserQuery('usersData')
+
+  const found = data.find(user => user.email === email);
   return found;
 }

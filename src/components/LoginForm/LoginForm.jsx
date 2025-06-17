@@ -8,20 +8,19 @@ import { doCredentialLogin } from '@/app/actions'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useGetUserQuery } from '@/features/user'
+import { useUser } from '@/app/hooks/useUser'
 
 export default function LoginForm() {
   const router = useRouter()
   const [error, setError] = useState(null);
-  const { update } = useSession(); // update ফাংশন পাওয়া
-  // console.log(status)
-  // console.log(update)
-
-  
+  const { update } = useSession(); 
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
     try {
-      const formData = new FormData(event.currentTarget);
       const response = await doCredentialLogin(formData);
       console.log(response)
       if (response && !response.error) {
@@ -57,7 +56,7 @@ export default function LoginForm() {
             type="submit"
             className="w-full mt-2 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md transition duration-200"
           >
-            Submit
+            Login
           </button>
         </form>
 
