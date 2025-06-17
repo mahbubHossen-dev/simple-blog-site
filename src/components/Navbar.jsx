@@ -51,7 +51,7 @@ export default function Navbar() {
                             <Logout />
                         </> : <div className='flex gap-2'>
                             <Link href={'/signIn'}>SignIn</Link>
-                            <Link href={''}>SignUp</Link>
+                            <Link href={'/register'}>SignUp</Link>
                         </div>
                     }
 

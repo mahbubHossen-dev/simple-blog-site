@@ -7,6 +7,7 @@ import SocialLogin from './SocialLogin'
 import { doCredentialLogin } from '@/app/actions'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 export default function LoginForm() {
   const router = useRouter()
@@ -65,6 +66,8 @@ export default function LoginForm() {
 
         {/* Optional: Other login methods */}
         <SocialLogin />
+
+        <p className='my-4'>Don't have an account? <Link href={'/register'}>Register</Link></p>
       </div>
     </div>
   )
